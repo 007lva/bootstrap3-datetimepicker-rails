@@ -1489,9 +1489,14 @@
 
             options.defaultDate = parsedDate;
 
-            if (options.defaultDate && input.val().trim() === '' && input.attr('placeholder') === undefined) {
+            if (input.val()) {
+                if (options.defaultDate && input.val().trim() === '' && input.attr('placeholder') === undefined) {
+                    setValue(options.defaultDate);
+                }
+            } else {
                 setValue(options.defaultDate);
             }
+
             return picker;
         };
 
